@@ -1,0 +1,11 @@
+def bullsandcows(secret,guess):
+    bull=0
+    for i in range(len(secret)):
+        bull+=int(secret[i]==guess[i])
+    cows=0
+    for c in set(secret):
+        cows+=min(secret.count(c),guess.count(c))
+    return f"{bull}A{cows-bull}B"
+secret="1050"
+guess="2032"
+print(bullsandcows(secret,guess))
